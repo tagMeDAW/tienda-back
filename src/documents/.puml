@@ -1,0 +1,76 @@
+@startuml
+
+class Usuario{
+    -id
+    -admin
+    -nombre
+    -correo
+    -direccion
+    -telefono
+    -contraseña
+    -iban
+    -idPagina
+    -idTarjeta
+    +get*
+    +set*
+}
+
+class Producto{
+   -id
+   -nombre
+   -categoria
+   -descripcion
+   -precioBase
+   -descuento
+   -precioFinal
+}
+
+class Carrito{
+    -id
+    -usuario
+    -detailCarrito
+}
+
+class DetailProducto{
+    -producto
+    -cantidad
+    -precioBase
+    -descuento
+    -precioTotal
+}
+
+class Pedido{
+    -id
+    -precioBase
+    -descuento
+    -precioTotal
+    -usarioId
+    -fecha
+    -datailPedido
+}
+
+class DetailPedido{
+    -producto
+    -cantidad
+    -precioBase
+    -descuento
+    -precioTotal
+}
+
+class Color {
+    -id
+    -Hex1
+    -Hex2
+    -Hex3
+    -Hex4
+    -Hex5
+    -Hex6
+}
+
+@enduml
+
+class Tarjeta {
+    -id
+    -material
+    -idColor
+}
