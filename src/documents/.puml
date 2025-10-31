@@ -66,11 +66,28 @@ class Color {
     -Hex5
     -Hex6
 }
-
-@enduml
-
 class Tarjeta {
     -id
     -material
     -idColor
 }
+class Categoria{
+    -id
+    -nombre
+}
+' Relaciones entre entidades
+Usuario "1" *-- "1" Carrito : tiene
+Carrito "1" *-- "*" DetailProducto : contiene
+DetailProducto "1" --> "1" Producto : referencia
+Usuario "1" -- "*" Pedido : realiza
+Pedido "1" *-- "*" DetailPedido : contiene
+DetailPedido "1" --> "1" Producto : referencia
+Usuario "1" o-- "*" Tarjeta : posee
+Tarjeta "1" --> "1" Color : color
+Categoria "1" -- "*" Producto : clasifica
+
+
+
+
+
+@enduml
