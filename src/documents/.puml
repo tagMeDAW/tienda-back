@@ -85,6 +85,7 @@ DetailPedido "1" --> "1" Producto : referencia
 Usuario "1" o-- "*" Tarjeta : posee
 Tarjeta "1" --> "1" Color : color
 Categoria "1" -- "*" Producto : clasifica
+Pedido "1" --> "1" Carrito:Genera
 
 
 
