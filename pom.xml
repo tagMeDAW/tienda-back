@@ -51,4 +51,57 @@
 		</plugins>
 	</build>
 
+	<plugins>
+	<plugin>
+   <groupId>org.codehaus.mojo</groupId>
+   <artifactId>exec-maven-plugin</artifactId>
+   <version>3.0.0</version>
+   <executions>
+      <execution>
+         <id>build-cliente</id>
+         <phase>compile</phase>
+         <goals>
+            <goal>exec</goal>
+         </goals>
+         <configuration>
+            <executable>NOMBRE_DEL_EJECUTABLE_A_EJECUTAR</executable>
+            <workingDirectory>${project.basedir}</workingDirectory>
+            <arguments>
+               <argument>ARGUMENTO_1</argument>
+               <argument>ARGUMENTO_n</argument>
+            </arguments>
+         </configuration>
+      </execution>
+   </executions>
+</plugin>
+		<plugin>
+    <groupId>com.github.davidmoten</groupId>
+    <artifactId>plantuml-maven-plugin</artifactId>
+    <version>0.2.14</version>
+		<executions>
+        <execution>
+            <id>generate-diagrams</id>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+        </execution>
+    	</executions>
+    		<configuration>
+        		<sources>
+            	<directory>${basedir}/src</directory>
+            		<includes>
+                		<include>**/*.puml</include>
+            		</includes>
+        		</sources>
+        		<outputDirectory>${basedir}/src</outputDirectory>
+        		<formats>
+            		<format>png</format>
+        		</formats>
+        		<preserveDirectoryStructure>true</preserveDirectoryStructure>
+        		<generateMarkdownIndex>false</generateMarkdownIndex>
+    		</configuration>
+		</plugin>
+	</plugins>
+
 </project>
